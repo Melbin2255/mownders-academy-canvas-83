@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { benefitsContent } from '@/utils/siteContent';
 import { useInView } from 'react-intersection-observer';
@@ -6,7 +5,7 @@ import {
   AcademicCapIcon, 
   UserCircleIcon, 
   ChartBarIcon, 
-  ClipboardCheckIcon 
+  ClipboardIcon 
 } from '@heroicons/react/24/outline';
 
 interface BenefitsSectionProps {
@@ -23,7 +22,7 @@ const BenefitsSection = ({ id }: BenefitsSectionProps) => {
     UserCircle: <UserCircleIcon className="w-8 h-8 text-indigo-600" />,
     AcademicCap: <AcademicCapIcon className="w-8 h-8 text-indigo-600" />,
     ChartBar: <ChartBarIcon className="w-8 h-8 text-indigo-600" />,
-    ClipboardCheck: <ClipboardCheckIcon className="w-8 h-8 text-indigo-600" />
+    ClipboardCheck: <ClipboardIcon className="w-8 h-8 text-indigo-600" />
   };
 
   const containerVariants = {
