@@ -1,6 +1,6 @@
 
 import React from 'react';
-import HeroSection from '@/components/sections/HeroSection';
+import Hero from '@/components/Hero';
 import BenefitsSection from '@/components/sections/BenefitsSection';
 import OfferingsSection from '@/components/sections/OfferingsSection';
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
@@ -27,7 +27,7 @@ const Index = () => {
         <meta name="twitter:description" content={seoData.twitterDescription} />
       </Helmet>
       <div className="min-h-screen bg-white">
-        <HeroSection id="hero" />
+        <Hero />
         <BenefitsSection id="benefits" />
         <OfferingsSection id="offerings" />
         <WhyChooseUsSection id="why-us" />
