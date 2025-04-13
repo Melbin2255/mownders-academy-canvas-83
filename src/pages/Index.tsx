@@ -6,10 +6,10 @@ import OfferingsSection from '@/components/sections/OfferingsSection';
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
 import AboutSection from '@/components/sections/AboutSection';
 import ServicesDetailSection from '@/components/sections/ServicesDetailSection';
-import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import FAQSection from '@/components/sections/FAQSection';
 import ContactSection from '@/components/sections/ContactSection';
 import CallToActionBanner from '@/components/sections/CallToActionBanner';
+import Footer from '@/components/Footer';
 import { Helmet } from 'react-helmet-async';
 import { seoData } from '@/utils/siteContent';
 
@@ -33,10 +33,10 @@ const Index = () => {
         <WhyChooseUsSection id="why-us" />
         <AboutSection id="about" />
         <ServicesDetailSection id="services" />
-        <TestimonialsSection id="testimonials" />
         <FAQSection id="faq" />
         <CallToActionBanner />
         <ContactSection id="contact" />
+        <Footer />
       </div>
     </>
   );

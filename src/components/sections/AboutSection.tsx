@@ -18,11 +18,6 @@ const AboutSection = ({ id }: AboutSectionProps) => {
     threshold: 0.1,
   });
   
-  const { ref: teamRef, inView: teamInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -69,6 +64,9 @@ const AboutSection = ({ id }: AboutSectionProps) => {
             <p className="text-lg text-gray-700 leading-relaxed">
               {aboutContent.mission.description}
             </p>
+            <p className="mt-4 text-lg text-gray-700 leading-relaxed">
+              We believe in empowering students with personalized guidance, expert insights, and dedicated support throughout their educational journey. Our approach combines industry expertise with a deep understanding of each student's unique goals and aspirations.
+            </p>
           </motion.div>
 
           <motion.div
@@ -92,7 +90,7 @@ const AboutSection = ({ id }: AboutSectionProps) => {
         </div>
 
         {/* Values Section */}
-        <div ref={valuesRef} className="mb-20">
+        <div ref={valuesRef} className="mb-10">
           <motion.h3
             className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center"
             initial={{ opacity: 0 }}
@@ -122,67 +120,6 @@ const AboutSection = ({ id }: AboutSectionProps) => {
                 <p className="text-gray-700">
                   {value.description}
                 </p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* Team Section */}
-        <div ref={teamRef}>
-          <motion.h3
-            className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center"
-            initial={{ opacity: 0 }}
-            animate={teamInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            {aboutContent.team.title}
-          </motion.h3>
-
-          <motion.p
-            className="text-center text-lg text-gray-700 mb-10 max-w-3xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={teamInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
-            {aboutContent.team.description}
-          </motion.p>
-
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            animate={teamInView ? "visible" : "hidden"}
-          >
-            {aboutContent.team.members.map((member, index) => (
-              <motion.div
-                key={index}
-                className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
-                variants={itemVariants}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              >
-                <div className="h-64 overflow-hidden">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.src = `https://images.unsplash.com/photo-155155169${index + 1}0-6ddc92d4b8a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80`;
-                    }}
-                  />
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-semibold text-gray-900">
-                    {member.name}
-                  </h4>
-                  <p className="text-indigo-600 font-medium mb-2">
-                    {member.title}
-                  </p>
-                  <p className="text-gray-600">
-                    {member.bio}
-                  </p>
-                </div>
               </motion.div>
             ))}
           </motion.div>
