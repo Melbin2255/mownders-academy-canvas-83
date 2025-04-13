@@ -1,13 +1,44 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import HeroSection from '@/components/sections/HeroSection';
+import BenefitsSection from '@/components/sections/BenefitsSection';
+import OfferingsSection from '@/components/sections/OfferingsSection';
+import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection';
+import AboutSection from '@/components/sections/AboutSection';
+import ServicesDetailSection from '@/components/sections/ServicesDetailSection';
+import TestimonialsSection from '@/components/sections/TestimonialsSection';
+import FAQSection from '@/components/sections/FAQSection';
+import ContactSection from '@/components/sections/ContactSection';
+import CallToActionBanner from '@/components/sections/CallToActionBanner';
+import { Helmet } from 'react-helmet-async';
+import { seoData } from '@/utils/siteContent';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={seoData.twitterTitle} />
+        <meta name="twitter:description" content={seoData.twitterDescription} />
+      </Helmet>
+      <div className="min-h-screen bg-white">
+        <HeroSection id="hero" />
+        <BenefitsSection id="benefits" />
+        <OfferingsSection id="offerings" />
+        <WhyChooseUsSection id="why-us" />
+        <AboutSection id="about" />
+        <ServicesDetailSection id="services" />
+        <TestimonialsSection id="testimonials" />
+        <FAQSection id="faq" />
+        <CallToActionBanner />
+        <ContactSection id="contact" />
       </div>
-    </div>
+    </>
   );
 };
 
